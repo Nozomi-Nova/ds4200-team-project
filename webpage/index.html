@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Credit Ratings Visualization</title>
+
+    <!-- ✅ Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ✅ Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- ✅ D3.js -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!-- ✅ Visualization Script -->
+    <script src="d3_visualization.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Credit Ratings Visualizations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sector-trends">Sector Trends</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#radarChartSection">Feature Importance Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#financial-ratios">Financial Ratios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#horizontal-bar">Overall Feature Importance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#altair-chart">Altair Chart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="container mt-5 pt-5">
+        <h1 class="text-center mt-5">Corporate Credit Ratings Analysis</h1>
+        <p class="text-center">Explore trends, key financial ratios, and feature importance in credit ratings.</p>
+    </section>
+
+    <!-- Sector-Based Trends Section -->
+    <section ifd="sector-trends" class="container mt-5">
+        <h2 class="text-center">Sector-Based Trends in Binary Ratings</h2>
+        <div id="lineChartWrapper">
+            <div id="lineChart" class="text-center"></div>
+            <div id="lineChartControls" class="mt-2"></div>
+        </div>
+    </section>
+
+    <!-- Feature Importance Section -->
+    <section id="radarChartSection">
+        <h2 class="text-center"> Feature Importance Analysis</h2>
+        <div id="radarChartControls"
+            style="margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%;">
+        </div>
+        <div id="radarChart" class="text-center"></div>
+    </section>
+
+    <!-- Financial Ratios Section -->
+    <section id="financial-ratios" class="container mt-5">
+        <h2 class="text-center">Sector-Based Key Financial Ratios</h2>
+        <!-- Add hover instructions -->
+        <p class="text-center text-muted">Hover over the images or use the arrows to explore each financial ratio</p>
+    
+        <div id="financialRatiosCarousel" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="30000"
+            style="max-width: 90%; max-height: 600px;">
+            <!-- Indicators (dots) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#financialRatiosCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Current Ratio"></button>
+                <button type="button" data-bs-target="#financialRatiosCarousel" data-bs-slide-to="1"
+                    aria-label="Debt-Equity Ratio"></button>
+                <button type="button" data-bs-target="#financialRatiosCarousel" data-bs-slide-to="2"
+                    aria-label="ROE"></button>
+            </div>
+    
+            <div class="carousel-inner">
+                <!-- Current Ratio -->
+                <div class="carousel-item active">
+                    <img src="../visualizations/Current_Ratio_(Z-score).png" class="d-block mx-auto img-fluid"
+                        alt="Current Ratio" style="max-height: 800px;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Current Ratio (Z-Score)</h5>
+                    </div>
+                </div>
+                <!-- Debt-Equity Ratio -->
+                <div class="carousel-item">
+                    <img src="../visualizations/Debt-Equity_Ratio_(Z-score).png" class="d-block mx-auto img-fluid"
+                        alt="Debt-Equity Ratio" style="max-height: 800px;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Debt-Equity Ratio (Z-Score)</h5>
+                    </div>
+                </div>
+                <!-- ROE -->
+                <div class="carousel-item">
+                    <img src="../visualizations/ROE_-_Return_On_Equity_(Z-score).png" class="d-block mx-auto img-fluid"
+                        alt="ROE" style="max-height: 800px;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>ROE - Return On Equity (Z-Score)</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#financialRatiosCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#financialRatiosCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Horizontal Bar Plot Section -->
+    <section id="horizontal-bar" class="container mt-5">
+        <h2 class="text-center">Overall Feature Importance</h2>
+        <div id="horizontalBarChart" class="text-center">
+            <img src="../visualizations/feature_importance_plot.png" alt="Overall Feature Importance Plot"
+                class="img-fluid mx-auto d-block" style="max-width: 80%; height: auto;">
+        </div>
+    </section>
+
+    <!-- Altair Chart Section -->
+    <section id="altair-chart" class="container mt-5">
+        <h2 class="text-center">Altair Interactive Bar Chart</h2>
+        <div class="d-flex justify-content-center mt-4">
+            <iframe src="../visualizations/altair_sector_performance.html" 
+                width="900" 
+                height="600"
+                style="border:none;">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>Created for DS4200 - Northeastern University.</p>
+    </footer>
+</body>
+
+</html>

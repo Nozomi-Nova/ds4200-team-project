@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-395c23ef26f22e56d2f345271f150fe7"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Metric", "type": "nominal"}, "tooltip": [{"field": "Sector", "type": "nominal"}, {"field": "Metric", "type": "nominal"}, {"field": "Value", "type": "quantitative"}], "x": {"field": "Value", "title": "Score", "type": "quantitative"}, "y": {"field": "Sector", "sort": "-x", "title": "Sector", "type": "nominal"}}, "height": 300, "title": "Sector-Wise Model Performance (Sorted)", "transform": [{"fold": ["Accuracy", "Precision", "Recall", "F1 Score"], "as": ["Metric", "Value"]}], "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-395c23ef26f22e56d2f345271f150fe7": [{"Sector": "Buseq", "Accuracy": 0.734375, "Precision": 0.7533333333333333, "Recall": 0.889763779527559, "F1 Score": 0.8158844765342961}, {"Sector": "Chems", "Accuracy": 0.7777777777777778, "Precision": 0.7307692307692307, "Recall": 1.0, "F1 Score": 0.8444444444444444}, {"Sector": "Durbl", "Accuracy": 0.7555555555555555, "Precision": 0.7037037037037037, "Recall": 0.8636363636363636, "F1 Score": 0.7755102040816326}, {"Sector": "Enrgy", "Accuracy": 0.8270676691729323, "Precision": 0.803921568627451, "Recall": 0.9647058823529412, "F1 Score": 0.8770053475935828}, {"Sector": "Hlth", "Accuracy": 0.704, "Precision": 0.6886792452830188, "Recall": 0.948051948051948, "F1 Score": 0.7978142076502732}, {"Sector": "Manuf", "Accuracy": 0.751269035532995, "Precision": 0.7611940298507462, "Recall": 0.8571428571428571, "F1 Score": 0.8063241106719368}, {"Sector": "Money", "Accuracy": 0.7380952380952381, "Precision": 0.8571428571428571, "Recall": 0.6923076923076923, "F1 Score": 0.7659574468085106}, {"Sector": "Nodur", "Accuracy": 0.8771929824561403, "Precision": 0.8888888888888888, "Recall": 0.967032967032967, "F1 Score": 0.9263157894736842}, {"Sector": "Other", "Accuracy": 0.7649402390438247, "Precision": 0.8048780487804879, "Recall": 0.7388059701492538, "F1 Score": 0.7704280155642024}, {"Sector": "Shops", "Accuracy": 0.810126582278481, "Precision": 0.8543689320388349, "Recall": 0.8543689320388349, "F1 Score": 0.8543689320388349}, {"Sector": "Telcm", "Accuracy": 0.7564102564102564, "Precision": 0.7954545454545454, "Recall": 0.7777777777777778, "F1 Score": 0.7865168539325843}, {"Sector": "Utils", "Accuracy": 0.8994082840236687, "Precision": 0.9130434782608696, "Recall": 0.98, "F1 Score": 0.945337620578778}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

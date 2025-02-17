@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+section {
+    padding: 60px 0;
+}
+
+#radarChart,
+#parallelChart {
+    min-height: 400px;
+}
+
+.navbar {
+    padding: 15px 20px;
+}
+
+#lineChartWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+#lineChart {
+    flex-grow: 1;
+}
+
+#lineChartControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#altair-chart iframe {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    /* Centers the iframe */
+}
+
+#altair-chart {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0;
+}

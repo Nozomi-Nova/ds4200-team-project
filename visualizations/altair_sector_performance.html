@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 14, "titleFontSize": 16}, "legend": {"labelFontSize": 12, "orient": "bottom", "titleFontSize": 14}, "title": {"anchor": "middle", "color": "black", "fontSize": 22}}, "data": {"name": "data-d9715ad645cddcd5d5497ea5b03e4a44"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Metric", "scale": {"scheme": "tableau10"}, "title": "Metric", "type": "nominal"}, "tooltip": [{"field": "Sector", "title": "Sector", "type": "nominal"}, {"field": "Metric", "title": "Metric", "type": "nominal"}, {"field": "Score", "format": ".2f", "title": "Score", "type": "quantitative"}], "x": {"field": "Score", "scale": {"domain": [0, 4]}, "title": "Score", "type": "quantitative"}, "y": {"field": "Sector", "sort": "-x", "title": "Sector", "type": "nominal"}}, "height": 500, "title": "Sector-Wise Model Performance Metrics", "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-d9715ad645cddcd5d5497ea5b03e4a44": [{"Sector": "Buseq", "Metric": "Accuracy", "Score": 0.734375}, {"Sector": "Chems", "Metric": "Accuracy", "Score": 0.7777777777777778}, {"Sector": "Durbl", "Metric": "Accuracy", "Score": 0.7555555555555555}, {"Sector": "Enrgy", "Metric": "Accuracy", "Score": 0.8270676691729323}, {"Sector": "Hlth", "Metric": "Accuracy", "Score": 0.704}, {"Sector": "Manuf", "Metric": "Accuracy", "Score": 0.751269035532995}, {"Sector": "Money", "Metric": "Accuracy", "Score": 0.7380952380952381}, {"Sector": "Nodur", "Metric": "Accuracy", "Score": 0.8771929824561403}, {"Sector": "Other", "Metric": "Accuracy", "Score": 0.7649402390438247}, {"Sector": "Shops", "Metric": "Accuracy", "Score": 0.810126582278481}, {"Sector": "Telcm", "Metric": "Accuracy", "Score": 0.7564102564102564}, {"Sector": "Utils", "Metric": "Accuracy", "Score": 0.8994082840236687}, {"Sector": "Buseq", "Metric": "F1 Score", "Score": 0.8158844765342961}, {"Sector": "Chems", "Metric": "F1 Score", "Score": 0.8444444444444444}, {"Sector": "Durbl", "Metric": "F1 Score", "Score": 0.7755102040816326}, {"Sector": "Enrgy", "Metric": "F1 Score", "Score": 0.8770053475935828}, {"Sector": "Hlth", "Metric": "F1 Score", "Score": 0.7978142076502732}, {"Sector": "Manuf", "Metric": "F1 Score", "Score": 0.8063241106719368}, {"Sector": "Money", "Metric": "F1 Score", "Score": 0.7659574468085106}, {"Sector": "Nodur", "Metric": "F1 Score", "Score": 0.9263157894736842}, {"Sector": "Other", "Metric": "F1 Score", "Score": 0.7704280155642024}, {"Sector": "Shops", "Metric": "F1 Score", "Score": 0.8543689320388349}, {"Sector": "Telcm", "Metric": "F1 Score", "Score": 0.7865168539325843}, {"Sector": "Utils", "Metric": "F1 Score", "Score": 0.945337620578778}, {"Sector": "Buseq", "Metric": "Precision", "Score": 0.7533333333333333}, {"Sector": "Chems", "Metric": "Precision", "Score": 0.7307692307692307}, {"Sector": "Durbl", "Metric": "Precision", "Score": 0.7037037037037037}, {"Sector": "Enrgy", "Metric": "Precision", "Score": 0.803921568627451}, {"Sector": "Hlth", "Metric": "Precision", "Score": 0.6886792452830188}, {"Sector": "Manuf", "Metric": "Precision", "Score": 0.7611940298507462}, {"Sector": "Money", "Metric": "Precision", "Score": 0.8571428571428571}, {"Sector": "Nodur", "Metric": "Precision", "Score": 0.8888888888888888}, {"Sector": "Other", "Metric": "Precision", "Score": 0.8048780487804879}, {"Sector": "Shops", "Metric": "Precision", "Score": 0.8543689320388349}, {"Sector": "Telcm", "Metric": "Precision", "Score": 0.7954545454545454}, {"Sector": "Utils", "Metric": "Precision", "Score": 0.9130434782608696}, {"Sector": "Buseq", "Metric": "Recall", "Score": 0.889763779527559}, {"Sector": "Chems", "Metric": "Recall", "Score": 1.0}, {"Sector": "Durbl", "Metric": "Recall", "Score": 0.8636363636363636}, {"Sector": "Enrgy", "Metric": "Recall", "Score": 0.9647058823529412}, {"Sector": "Hlth", "Metric": "Recall", "Score": 0.948051948051948}, {"Sector": "Manuf", "Metric": "Recall", "Score": 0.8571428571428571}, {"Sector": "Money", "Metric": "Recall", "Score": 0.6923076923076923}, {"Sector": "Nodur", "Metric": "Recall", "Score": 0.967032967032967}, {"Sector": "Other", "Metric": "Recall", "Score": 0.7388059701492538}, {"Sector": "Shops", "Metric": "Recall", "Score": 0.8543689320388349}, {"Sector": "Telcm", "Metric": "Recall", "Score": 0.7777777777777778}, {"Sector": "Utils", "Metric": "Recall", "Score": 0.98}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
