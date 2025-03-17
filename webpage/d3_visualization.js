@@ -174,11 +174,11 @@ d3.json("../data/feature_importance_data.json").then(data => {
 
 // Radar Chart Function
 function updateRadarChart(data, selectedSectors) {
-    const topFeatures = ["Debt/Equity Ratio", "Current Ratio", "EBIT Margin", "Operating Margin", "ROA - Return On Assets"]; // Fixed features
+    const topFeatures = ["Debt/Equity Ratio", "Current Ratio", "EBIT Margin", "Operating Margin", "Return On Assets"]; 
 
-    const radarWidth = 700; // Chart dimensions
-    const radarHeight = 700;
-    const radius = Math.min(radarWidth, radarHeight) / 2 - 90; // Radius with padding
+    const radarWidth = 850; // Chart dimensions
+    const radarHeight = 750;
+    const radius = Math.min(radarWidth, radarHeight) / 2 - 90; 
 
     const radarSvg = d3.select("#radarChart")
         .html("") // Clear previous chart
@@ -190,10 +190,10 @@ function updateRadarChart(data, selectedSectors) {
 
     const angleScale = d3.scaleLinear()
         .domain([0, topFeatures.length])
-        .range([0, 2 * Math.PI]);
+        .range([-Math.PI / 2, Math.PI * 1.5]);
 
     const radialScale = d3.scaleLinear()
-        .domain([-2.5, 1.5]) // Adjust range based on coefficient values
+        .domain([-2.5, 1.5]) 
         .range([0, radius]);
 
     // Draw circular gridlines and axis labels
@@ -216,30 +216,31 @@ function updateRadarChart(data, selectedSectors) {
     // Draw feature axes and labels
     topFeatures.forEach((feature, i) => {
         const angle = angleScale(i);
-        const lineCoords = {
-            x: Math.cos(angle) * radius,
-            y: Math.sin(angle) * radius,
-        };
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
         radarSvg.append("line")
             .attr("x1", 0)
             .attr("y1", 0)
-            .attr("x2", lineCoords.x)
-            .attr("y2", lineCoords.y)
+            .attr("x2", x)
+            .attr("y2", y)
             .attr("stroke", "gray")
             .attr("stroke-width", 1);
 
+        // Adjust text positioning dynamically
         radarSvg.append("text")
-            .attr("x", lineCoords.x * 1.3)
-            .attr("y", lineCoords.y * 1.3)
+            .attr("x", x * 1.2)  // Slightly extend
+            .attr("y", y * 1.2)  
+            .attr("dy", (angle > Math.PI / 2 && angle < (3 * Math.PI) / 2) ? "0.6em" : "-0.6em")  
+            .attr("dx", (angle < 0.1 || angle > 2.9) ? "0" : (angle < Math.PI ? "0.6em" : "-0.6fem"))
             .style("text-anchor", () => {
-                if (angle === 0) return "middle";
-                if (angle > Math.PI) return "end";
-                if (angle < Math.PI) return "start";
-                return "middle";
+                if (Math.abs(angle) < 0.1 || Math.abs(angle - Math.PI) < 0.1) return "middle";
+                return angle < Math.PI ? "start" : "end"; 
             })
             .style("font-size", "12px")
-            .text(`${feature}`);
+            .text(feature);
     });
+
 
     // Draw radar areas for each selected sector
     const radarLine = d3.lineRadial()
@@ -251,7 +252,7 @@ function updateRadarChart(data, selectedSectors) {
     selectedSectors.forEach(sector => {
         const sectorData = topFeatures.map(feature => {
             const entry = data[sector].find(d => d.Feature === feature);
-            return entry ? entry.Coefficient : 0; // Default to 0 if missing
+            return entry ? entry.Coefficient : 0; 
         });
 
         sectorData.push(sectorData[0]); // Close the radar chart loop

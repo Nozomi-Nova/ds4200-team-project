@@ -1,5 +1,5 @@
 {
-    "Buseq": [
+    "Business Equipment": [
         {
             "Feature": "ROA - Return On Assets",
             "Coefficient": 0.08963931578133114
@@ -21,7 +21,7 @@
             "Coefficient": -0.41725305810216795
         }
     ],
-    "Chems": [
+    "Chemicals": [
         {
             "Feature": "ROA - Return On Assets",
             "Coefficient": 0.29581320441671644
@@ -43,7 +43,7 @@
             "Coefficient": -1.1991656996535283
         }
     ],
-    "Durbl": [
+    "Durable Goods": [
         {
             "Feature": "Operating Margin",
             "Coefficient": 0.12221103657980131
@@ -65,202 +65,202 @@
             "Coefficient": -0.4440514436525221
         }
     ],
-    "Enrgy": [
+    "Energy": [
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.8208267395907914
+            "Coefficient": 0.8209454205925744
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": 0.30708972107243554
+            "Coefficient": 0.30713035173442804
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -0.4673167632641209
+            "Coefficient": -0.46769916212398255
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -0.7216902121600547
+            "Coefficient": -0.7217949201620443
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -2.4853738294545686
+            "Coefficient": -2.486350518427287
         }
     ],
-    "Hlth": [
+    "Financials": [
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.7596355733373371
+            "Coefficient": 0.7040007801788692
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -0.08864027439418977
+            "Coefficient": 0.4092508736470597
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -0.39930374750244496
+            "Coefficient": 0.0914863584427993
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": -0.4625935928295773
+            "Coefficient": -0.1330787513060982
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -0.8539277842638646
+            "Coefficient": -0.7324445904742883
         }
     ],
-    "Manuf": [
+    "Healthcare": [
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.8718412336321433
-        },
-        {
-            "Feature": "ROA - Return On Assets",
-            "Coefficient": 0.01827409183726847
-        },
-        {
-            "Feature": "Debt/Equity Ratio",
-            "Coefficient": 0.003019285119515482
+            "Coefficient": 0.759121348167781
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -0.35459904260772157
+            "Coefficient": -0.08808910887162628
+        },
+        {
+            "Feature": "Debt/Equity Ratio",
+            "Coefficient": -0.399375507489743
+        },
+        {
+            "Feature": "ROA - Return On Assets",
+            "Coefficient": -0.46253790099778996
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -1.119019487425786
+            "Coefficient": -0.8534829462288218
         }
     ],
-    "Money": [
+    "Manufacturing": [
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.7048004295245778
-        },
-        {
-            "Feature": "Current Ratio",
-            "Coefficient": 0.40971726220866295
-        },
-        {
-            "Feature": "Debt/Equity Ratio",
-            "Coefficient": 0.09174137656421354
+            "Coefficient": 0.8743684940087735
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": -0.1326081989009831
+            "Coefficient": 0.017725420962865623
+        },
+        {
+            "Feature": "Debt/Equity Ratio",
+            "Coefficient": 0.003024568478869128
+        },
+        {
+            "Feature": "Current Ratio",
+            "Coefficient": -0.35395435307286055
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -0.7331636320837391
+            "Coefficient": -1.1213448495688492
         }
     ],
-    "Nodur": [
+    "Non-Durable Goods": [
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.20357674847279922
+            "Coefficient": 0.20526033700568397
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -0.1963403828808134
+            "Coefficient": -0.19824863452180164
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -0.2545179720738328
+            "Coefficient": -0.25337549273065646
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": -0.40484889982323385
+            "Coefficient": -0.4035285492336941
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -1.0896737051805967
+            "Coefficient": -1.091135978501888
         }
     ],
     "Other": [
         {
             "Feature": "Operating Margin",
-            "Coefficient": 0.04916732790935207
+            "Coefficient": 0.04900046885928619
         },
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.04401752903386243
+            "Coefficient": 0.04416784160601286
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -0.05764496889492664
+            "Coefficient": -0.05765524449428075
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -0.142077505944271
+            "Coefficient": -0.14205742563673107
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": -0.2521667814061182
+            "Coefficient": -0.2521221398003033
         }
     ],
-    "Shops": [
+    "Retail": [
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.5315340246280331
+            "Coefficient": 0.531598298426339
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": -0.12050860881187797
+            "Coefficient": -0.12059651529212567
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -0.4752820337981159
+            "Coefficient": -0.47580090426497423
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -0.6857114277380838
+            "Coefficient": -0.6850336113542933
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -1.1171990052632788
+            "Coefficient": -1.117011581729793
         }
     ],
-    "Telcm": [
+    "Telecommunications": [
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": 0.18047566654853658
+            "Coefficient": 0.18016849044905053
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -0.00295114478648043
+            "Coefficient": -0.002946383887964865
         },
         {
             "Feature": "Operating Margin",
-            "Coefficient": -0.013338192779180713
+            "Coefficient": -0.013325838091384958
         },
         {
             "Feature": "EBIT Margin",
-            "Coefficient": -0.013338192779180713
+            "Coefficient": -0.013325838091384958
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -1.7227523996689167
+            "Coefficient": -1.723037029484495
         }
     ],
-    "Utils": [
+    "Utilities": [
         {
             "Feature": "Operating Margin",
-            "Coefficient": 0.01881597680844755
+            "Coefficient": 0.018750426075304687
         },
         {
             "Feature": "EBIT Margin",
-            "Coefficient": 0.01881597680844755
+            "Coefficient": 0.018750426075304687
         },
         {
             "Feature": "Current Ratio",
-            "Coefficient": -0.35327936658576076
+            "Coefficient": -0.3532234772039489
         },
         {
             "Feature": "Debt/Equity Ratio",
-            "Coefficient": -1.324863078277643
+            "Coefficient": -1.3265899697471097
         },
         {
             "Feature": "ROA - Return On Assets",
-            "Coefficient": -1.735083671637019
+            "Coefficient": -1.7419314215067443
         }
     ]
 }
