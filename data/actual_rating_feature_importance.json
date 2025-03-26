@@ -1,0 +1,266 @@
+{
+  "Utils": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.05844014868946214
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.47113407251546063
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": 0.010707701829278105
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 0.010707701829278049
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -0.5523766259553662
+    }
+  ],
+  "BusEq": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.3007722044899542
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.0022845655693662552
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": 0.0008058489395771876
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 0.0008058489395776629
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -0.11240237049391028
+    }
+  ],
+  "Shops": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.3780429832870119
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": 0.004694639827410141
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": -3.5159932091162682
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 3.349923911136199
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -1.17835726274844
+    }
+  ],
+  "Manuf": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.38875011664570686
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": 0.011709170013024725
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": -2.0074805893976366
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 1.927617349979901
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -0.5518421045245161
+    }
+  ],
+  "NoDur": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.31191989520097846
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.220967581284825
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": 0.0119538290060969
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": -0.0764415094142471
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -1.133002174568741
+    }
+  ],
+  "Other": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.14088920235153804
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.00425992087311904
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": 0.7043789565071307
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": -0.7015487688676295
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -0.2683181183933723
+    }
+  ],
+  "Chems": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.03735565414689386
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.3815938282915536
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": 0.0704993882887241
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 0.07049938828872387
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -1.7314828115840648
+    }
+  ],
+  "Telcm": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": -0.014945011430325034
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.0008337372754926627
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": -7.904239601152704e-05
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": -7.904239600923721e-05
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": -1.0806947179793722
+    }
+  ],
+  "Hlth": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.2184346146885552
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.3944293720274476
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": -1.851207457591527
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 1.8625666500149736
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": 0.06564305728792828
+    }
+  ],
+  "Money": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.31223485183723365
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": 0.01109680392587414
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": -0.6557194531619623
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 0.5956528945360502
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": 0.19652666312279998
+    }
+  ],
+  "Durbl": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.009035223104783737
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": 0.003647697785086751
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": 0.1606662578765266
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 0.16066625787652675
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": 0.6483533685218197
+    }
+  ],
+  "Enrgy": [
+    {
+      "Feature": "ROA - Return On Assets",
+      "Coefficient": 0.1717081138409969
+    },
+    {
+      "Feature": "Debt/Equity Ratio",
+      "Coefficient": -0.07085821406292893
+    },
+    {
+      "Feature": "Operating Margin",
+      "Coefficient": -0.2144704094803169
+    },
+    {
+      "Feature": "EBIT Margin",
+      "Coefficient": 0.1942836686456976
+    },
+    {
+      "Feature": "Current Ratio",
+      "Coefficient": 0.45111105544979085
+    }
+  ]
+}

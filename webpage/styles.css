@@ -39,6 +39,26 @@ section {
     align-items: flex-start;
 }
 
+#lineChartActualWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1px;
+  }
+
+#lineChartActual {
+    flex-grow: 1;
+}
+
+#lineChartActualControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 150px;
+}
+
 #altair-chart iframe {
     max-width: 100%;
     display: block;

@@ -1,0 +1,412 @@
+[
+  {
+    "Sector": "Business Equipment",
+    "Year": 2010,
+    "Average Rating": 16.0
+  },
+  {
+    "Sector": "Business Equipment",
+    "Year": 2011,
+    "Average Rating": 13.4
+  },
+  {
+    "Sector": "Business Equipment",
+    "Year": 2012,
+    "Average Rating": 13.563492063492063
+  },
+  {
+    "Sector": "Business Equipment",
+    "Year": 2013,
+    "Average Rating": 14.067484662576687
+  },
+  {
+    "Sector": "Business Equipment",
+    "Year": 2014,
+    "Average Rating": 14.379746835443038
+  },
+  {
+    "Sector": "Business Equipment",
+    "Year": 2015,
+    "Average Rating": 14.748062015503876
+  },
+  {
+    "Sector": "Business Equipment",
+    "Year": 2016,
+    "Average Rating": 13.761194029850746
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2010,
+    "Average Rating": 9.0
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2011,
+    "Average Rating": 13.0
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2012,
+    "Average Rating": 12.906976744186046
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2013,
+    "Average Rating": 13.403508771929825
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2014,
+    "Average Rating": 14.034883720930232
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2015,
+    "Average Rating": 13.532467532467532
+  },
+  {
+    "Sector": "Chemicals",
+    "Year": 2016,
+    "Average Rating": 12.58974358974359
+  },
+  {
+    "Sector": "Durable Goods",
+    "Year": 2011,
+    "Average Rating": 10.571428571428571
+  },
+  {
+    "Sector": "Durable Goods",
+    "Year": 2012,
+    "Average Rating": 11.214285714285714
+  },
+  {
+    "Sector": "Durable Goods",
+    "Year": 2013,
+    "Average Rating": 11.757575757575758
+  },
+  {
+    "Sector": "Durable Goods",
+    "Year": 2014,
+    "Average Rating": 13.220338983050848
+  },
+  {
+    "Sector": "Durable Goods",
+    "Year": 2015,
+    "Average Rating": 14.21311475409836
+  },
+  {
+    "Sector": "Durable Goods",
+    "Year": 2016,
+    "Average Rating": 12.038461538461538
+  },
+  {
+    "Sector": "Energy",
+    "Year": 2011,
+    "Average Rating": 13.185185185185185
+  },
+  {
+    "Sector": "Energy",
+    "Year": 2012,
+    "Average Rating": 13.25
+  },
+  {
+    "Sector": "Energy",
+    "Year": 2013,
+    "Average Rating": 14.5
+  },
+  {
+    "Sector": "Energy",
+    "Year": 2014,
+    "Average Rating": 15.126582278481013
+  },
+  {
+    "Sector": "Energy",
+    "Year": 2015,
+    "Average Rating": 13.53225806451613
+  },
+  {
+    "Sector": "Energy",
+    "Year": 2016,
+    "Average Rating": 11.504347826086956
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2010,
+    "Average Rating": 15.0
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2011,
+    "Average Rating": 11.11111111111111
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2012,
+    "Average Rating": 11.636363636363637
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2013,
+    "Average Rating": 12.666666666666666
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2014,
+    "Average Rating": 12.727272727272727
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2015,
+    "Average Rating": 13.375
+  },
+  {
+    "Sector": "Financials",
+    "Year": 2016,
+    "Average Rating": 11.227272727272727
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2010,
+    "Average Rating": 12.0
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2011,
+    "Average Rating": 16.766666666666666
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2012,
+    "Average Rating": 14.432432432432432
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2013,
+    "Average Rating": 14.376068376068377
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2014,
+    "Average Rating": 14.621118012422361
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2015,
+    "Average Rating": 14.434285714285714
+  },
+  {
+    "Sector": "Healthcare",
+    "Year": 2016,
+    "Average Rating": 14.26865671641791
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2010,
+    "Average Rating": 14.0
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2011,
+    "Average Rating": 14.063829787234043
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2012,
+    "Average Rating": 12.885714285714286
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2013,
+    "Average Rating": 13.403225806451612
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2014,
+    "Average Rating": 13.864406779661017
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2015,
+    "Average Rating": 13.892430278884461
+  },
+  {
+    "Sector": "Manufacturing",
+    "Year": 2016,
+    "Average Rating": 13.017094017094017
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2010,
+    "Average Rating": 13.0
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2011,
+    "Average Rating": 14.222222222222221
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2012,
+    "Average Rating": 14.060975609756097
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2013,
+    "Average Rating": 14.527777777777779
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2014,
+    "Average Rating": 14.755395683453237
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2015,
+    "Average Rating": 14.786585365853659
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Year": 2016,
+    "Average Rating": 14.39622641509434
+  },
+  {
+    "Sector": "Other",
+    "Year": 2010,
+    "Average Rating": 13.25
+  },
+  {
+    "Sector": "Other",
+    "Year": 2011,
+    "Average Rating": 11.634615384615385
+  },
+  {
+    "Sector": "Other",
+    "Year": 2012,
+    "Average Rating": 11.303191489361701
+  },
+  {
+    "Sector": "Other",
+    "Year": 2013,
+    "Average Rating": 12.237623762376238
+  },
+  {
+    "Sector": "Other",
+    "Year": 2014,
+    "Average Rating": 12.965753424657533
+  },
+  {
+    "Sector": "Other",
+    "Year": 2015,
+    "Average Rating": 13.36144578313253
+  },
+  {
+    "Sector": "Other",
+    "Year": 2016,
+    "Average Rating": 11.937853107344633
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2010,
+    "Average Rating": 15.0
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2011,
+    "Average Rating": 13.380952380952381
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2012,
+    "Average Rating": 11.851485148514852
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2013,
+    "Average Rating": 13.25974025974026
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2014,
+    "Average Rating": 13.905940594059405
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2015,
+    "Average Rating": 13.95067264573991
+  },
+  {
+    "Sector": "Retail",
+    "Year": 2016,
+    "Average Rating": 12.209876543209877
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2010,
+    "Average Rating": 13.0
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2011,
+    "Average Rating": 10.818181818181818
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2012,
+    "Average Rating": 12.575757575757576
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2013,
+    "Average Rating": 11.901234567901234
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2014,
+    "Average Rating": 12.011627906976743
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2015,
+    "Average Rating": 12.24
+  },
+  {
+    "Sector": "Telecommunications",
+    "Year": 2016,
+    "Average Rating": 11.927272727272728
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2010,
+    "Average Rating": 15.307692307692308
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2011,
+    "Average Rating": 14.947368421052632
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2012,
+    "Average Rating": 14.254716981132075
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2013,
+    "Average Rating": 14.954248366013072
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2014,
+    "Average Rating": 15.510729613733906
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2015,
+    "Average Rating": 15.312796208530806
+  },
+  {
+    "Sector": "Utilities",
+    "Year": 2016,
+    "Average Rating": 14.685393258426966
+  }
+]
