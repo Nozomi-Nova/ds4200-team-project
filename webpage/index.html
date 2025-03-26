@@ -164,6 +164,15 @@
             </div>
         </section>
 
+        <!-- Sector-Based Trends in Classic Ratings Section -->
+        <section id="sector-trends" class="container mt-5">
+            <h2 class="text-center">Sector-Based Trends in Classic Credit Ratings</h2>
+            <div id="lineChartActualWrapper">
+                <div id="lineChartActual" class="text-center"></div>
+                <div id="lineChartActualControls" class="mt-2"></div>
+            </div>
+        </section>
+
     <!-- Feature Importance Analysis Section -->
     <section id="radarChartSection" class="container mt-5">
         <h2 class="text-center">Feature Importance Analysis by Sector</h2>
@@ -235,6 +244,25 @@
             across industries and the factors that influence corporate credit ratings.
         </p>
     </section>
+
+    <!-- Actual Credit Ratings Radar Chart -->
+    <section id="actualRadarChartSection" class="container mt-5">
+        <h2 class="text-center">Feature Importance by Sector (Actual Credit Ratings)</h2>
+        <p class="text-center">
+            This radar chart uses a linear regression model trained on actual credit rating scores, mapped to numerical values
+            (AAA = 21 to D = 0). It highlights how different financial features contribute to creditworthiness in various sectors.
+            Higher coefficients indicate stronger influence on the rating.
+        </p>
+
+        <!-- Controls -->
+        <div id="actualRadarChartControls"
+            style="margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%;">
+        </div>
+
+        <!-- Radar Chart -->
+        <div id="actualRadarChart" class="text-center"></div>
+    </section>
+
 
     <!-- Sector-Based Key Financial Ratios Section -->
     <section id="financial-ratios" class="container mt-5">
