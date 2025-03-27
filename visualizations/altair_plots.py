@@ -1,43 +1,60 @@
-import altair as alt
 import pandas as pd
+import altair as alt
 
-# Load the sector performance data
-data = pd.read_csv("/Users/nozomikaneda/Desktop/Northeastern University/Spring 2025 Semester/DS4200/DS4200_Credit_Ratings_Project/data/sector_performance.csv")
+# Load your dataset
+df = pd.read_csv("/Users/nozomikaneda/Desktop/Northeastern University/Spring 2025 Semester/DS4200/DS4200_Credit_Ratings_Project/data/normalized_ratios.csv")
 
-data_melted = data.melt(
-    id_vars="Sector",
-    value_vars=["Accuracy", "F1 Score", "Precision", "Recall"],
-    var_name="Metric",
-    value_name="Score"
+# Key features from feature importance analysis
+features = [
+    "Operating Margin", "EBITDA Margin", "Current Ratio",
+    "Operating Cash Flow Per Share", "Debt/Equity Ratio"
+]
+
+# Melt to long format for Altair
+long_df = df.melt(
+    id_vars=["Rating Score"],
+    value_vars=features,
+    var_name="Feature",
+    value_name="Value"
 )
 
-chart = alt.Chart(data_melted).mark_bar().encode(
-    x=alt.X("Score:Q", title="Score", scale=alt.Scale(domain=[0, 4])),
-    y=alt.Y("Sector:N", title="Sector", sort="-x"),
-    color=alt.Color("Metric:N", title="Metric", scale=alt.Scale(scheme="tableau10")),
-    tooltip=[
-        alt.Tooltip("Sector:N", title="Sector"),
-        alt.Tooltip("Metric:N", title="Metric"),
-        alt.Tooltip("Score:Q", title="Score", format=".2f")
-    ]
-).properties(
-    title="Sector-Wise Model Performance Metrics",
-    width=800,  
+# Outlier clipping function
+def clip_outliers(group):
+    q_low = group["Value"].quantile(0.1)
+    q_high = group["Value"].quantile(0.9)
+    return group[(group["Value"] >= q_low) & (group["Value"] <= q_high)]
+
+# Apply clipping and preserve "Feature" as a column
+filtered_df = (
+    long_df
+    .groupby("Feature", group_keys=False)
+    .apply(lambda group: clip_outliers(group).assign(Feature=group.name))
+    .reset_index(drop=True)
+)
+
+# Altair dropdown setup
+dropdown = alt.binding_select(options=features, name="Select Feature:")
+selection = alt.selection_point(fields=["Feature"], bind=dropdown, value=features[0])
+
+# Scatterplot and trendline
+base = alt.Chart(filtered_df).add_params(selection).transform_filter(selection)
+
+scatter = base.mark_circle(opacity=0.3, size=60).encode(
+    x=alt.X("Value:Q", title="Financial Metric Value"),
+    y=alt.Y("Rating Score:Q", title="Credit Rating Score (lower is better)", scale=alt.Scale(zero=False, domain=[22, 0])),
+    tooltip=["Feature", "Value", "Rating Score"]
+)
+
+trend = base.transform_loess("Value", "Rating Score", groupby=["Feature"]).mark_line(color="red").encode(
+    x="Value:Q",
+    y="Rating Score:Q"
+)
+
+chart = (scatter + trend).properties(
+    title="Explore the Relationship Between Financial Metrics and Credit Rating Score",
+    width=800,
     height=500
-).configure_title(
-    fontSize=22,
-    anchor="middle",
-    color="black"
-).configure_axis(
-    labelFontSize=14,
-    titleFontSize=16
-).configure_legend(
-    titleFontSize=14,
-    labelFontSize=12,
-    orient="bottom"  
 )
 
-output_path = "visualizations/altair_sector_performance.html"
-chart.save(output_path)
-
-print(f"Altair chart saved at {output_path}.")
+# Save to HTML file
+chart.save("visualizations/altair_financial_metric_vs_rating.html")

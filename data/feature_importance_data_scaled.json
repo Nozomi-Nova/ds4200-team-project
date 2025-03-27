@@ -1,0 +1,302 @@
+[
+  {
+    "Sector": "Business Equipment",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.10198696571629695
+  },
+  {
+    "Sector": "Business Equipment",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.058890583136564825
+  },
+  {
+    "Sector": "Business Equipment",
+    "Feature": "Current Ratio",
+    "Coefficient": 0.40457173749757025
+  },
+  {
+    "Sector": "Business Equipment",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": -0.06857030995535111
+  },
+  {
+    "Sector": "Business Equipment",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": -0.06467263064651661
+  },
+  {
+    "Sector": "Chemicals",
+    "Feature": "Operating Margin",
+    "Coefficient": -0.04786791907934601
+  },
+  {
+    "Sector": "Chemicals",
+    "Feature": "EBITDA Margin",
+    "Coefficient": -0.20470921658414662
+  },
+  {
+    "Sector": "Chemicals",
+    "Feature": "Current Ratio",
+    "Coefficient": 0.226836651547884
+  },
+  {
+    "Sector": "Chemicals",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": 0.009826211783806419
+  },
+  {
+    "Sector": "Chemicals",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": 0.03441761813742889
+  },
+  {
+    "Sector": "Durable Goods",
+    "Feature": "Operating Margin",
+    "Coefficient": -0.13114783716154296
+  },
+  {
+    "Sector": "Durable Goods",
+    "Feature": "EBITDA Margin",
+    "Coefficient": -0.31218245396199235
+  },
+  {
+    "Sector": "Durable Goods",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.16076445758103766
+  },
+  {
+    "Sector": "Durable Goods",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": 0.0463202214865113
+  },
+  {
+    "Sector": "Durable Goods",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": 0.5384099530115855
+  },
+  {
+    "Sector": "Energy",
+    "Feature": "Operating Margin",
+    "Coefficient": -0.4909636123604588
+  },
+  {
+    "Sector": "Energy",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.005619500726451177
+  },
+  {
+    "Sector": "Energy",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.3571992743130455
+  },
+  {
+    "Sector": "Energy",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": 0.1961507041281115
+  },
+  {
+    "Sector": "Energy",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": -0.1466859590545341
+  },
+  {
+    "Sector": "Financials",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.4053482168421778
+  },
+  {
+    "Sector": "Financials",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.5323901843077983
+  },
+  {
+    "Sector": "Financials",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.16065891349308847
+  },
+  {
+    "Sector": "Financials",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": 0.04832190314000928
+  },
+  {
+    "Sector": "Financials",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": -0.32425511447383315
+  },
+  {
+    "Sector": "Healthcare",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.15478367370232327
+  },
+  {
+    "Sector": "Healthcare",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.12127613573512701
+  },
+  {
+    "Sector": "Healthcare",
+    "Feature": "Current Ratio",
+    "Coefficient": 0.08374560163560021
+  },
+  {
+    "Sector": "Healthcare",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": -0.0707454913227125
+  },
+  {
+    "Sector": "Healthcare",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": -0.043231850001217
+  },
+  {
+    "Sector": "Manufacturing",
+    "Feature": "Operating Margin",
+    "Coefficient": -0.06148494125533724
+  },
+  {
+    "Sector": "Manufacturing",
+    "Feature": "EBITDA Margin",
+    "Coefficient": -0.24293188256452644
+  },
+  {
+    "Sector": "Manufacturing",
+    "Feature": "Current Ratio",
+    "Coefficient": 0.23617957686517027
+  },
+  {
+    "Sector": "Manufacturing",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": 0.003364649448093016
+  },
+  {
+    "Sector": "Manufacturing",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": 0.04618834637350455
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.04549860055293244
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Feature": "EBITDA Margin",
+    "Coefficient": -0.10970498563931486
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.143386811532839
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": -0.021000190953246643
+  },
+  {
+    "Sector": "Non-Durable Goods",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": -0.038632545978372804
+  },
+  {
+    "Sector": "Other",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.02376974843032937
+  },
+  {
+    "Sector": "Other",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.030025483346074404
+  },
+  {
+    "Sector": "Other",
+    "Feature": "Current Ratio",
+    "Coefficient": 0.39682669238229445
+  },
+  {
+    "Sector": "Other",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": -0.01762252733482235
+  },
+  {
+    "Sector": "Other",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": 0.04171669921799027
+  },
+  {
+    "Sector": "Retail",
+    "Feature": "Operating Margin",
+    "Coefficient": -0.17287861676163582
+  },
+  {
+    "Sector": "Retail",
+    "Feature": "EBITDA Margin",
+    "Coefficient": -0.42040083409773604
+  },
+  {
+    "Sector": "Retail",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.17962662552663383
+  },
+  {
+    "Sector": "Retail",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": 0.061270223795265644
+  },
+  {
+    "Sector": "Retail",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": -0.13357122619432574
+  },
+  {
+    "Sector": "Telecommunications",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.11552261508595532
+  },
+  {
+    "Sector": "Telecommunications",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.36066318104762096
+  },
+  {
+    "Sector": "Telecommunications",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.484644529567383
+  },
+  {
+    "Sector": "Telecommunications",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": -0.10568573420521528
+  },
+  {
+    "Sector": "Telecommunications",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": 0.3746844628264625
+  },
+  {
+    "Sector": "Utilities",
+    "Feature": "Operating Margin",
+    "Coefficient": 0.2227585337445341
+  },
+  {
+    "Sector": "Utilities",
+    "Feature": "EBITDA Margin",
+    "Coefficient": 0.40510194204037636
+  },
+  {
+    "Sector": "Utilities",
+    "Feature": "Current Ratio",
+    "Coefficient": -0.6215555531187225
+  },
+  {
+    "Sector": "Utilities",
+    "Feature": "Operating Cash Flow Per Share",
+    "Coefficient": -0.02418027494618703
+  },
+  {
+    "Sector": "Utilities",
+    "Feature": "Debt/Equity Ratio",
+    "Coefficient": 0.010001777915677659
+  }
+]
