@@ -1,7 +1,6 @@
 import pandas as pd
 import altair as alt
 
-# Load your dataset
 df = pd.read_csv("/Users/nozomikaneda/Desktop/Northeastern University/Spring 2025 Semester/DS4200/DS4200_Credit_Ratings_Project/data/normalized_ratios.csv")
 
 # Key features from feature importance analysis
@@ -51,7 +50,7 @@ trend = base.transform_loess("Value", "Rating Score", groupby=["Feature"]).mark_
 )
 
 chart = (scatter + trend).properties(
-    title="Explore the Relationship Between Financial Metrics and Credit Rating Score",
+    title="Relationship Between Financial Metrics and Credit Rating Score",
     width=800,
     height=500
 )
