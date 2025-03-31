@@ -1,5 +1,6 @@
+
 console.log("Starting D3 script...");
-// Set up dimensions and margins for line chart
+// Dimensions and margins for line chart
 const lineMargin = { top: 500, right: 500, bottom: 500, left: 60 };
 const lineWidth = 100 - lineMargin.left - lineMargin.right;
 const lineHeight = 400 - lineMargin.top - lineMargin.bottom;
@@ -23,7 +24,7 @@ const line = d3.line()
     .y(d => yScale(d["Binary Rating"]))
     .curve(d3.curveBasis);
 
-// Load data and render the line chart
+// Loading data and render the line chart
 d3.json("../data/sector_yearly_data.json").then(data => {
     const nestedData = d3.groups(data, d => d.Sector);
 
@@ -62,25 +63,19 @@ d3.json("../data/sector_yearly_data.json").then(data => {
         .attr("stroke-width", 2)
         .attr("opacity", 0.6);
 
-    const tooltip = d3.select("body")
-        .append("div")
-        .attr("class", "tooltip")
-        .style("position", "absolute")
-        .style("padding", "5px")
-        .style("background", "#fff")
-        .style("border", "1px solid #ccc")
-        .style("border-radius", "5px")
-        .style("display", "none");
+    const tooltip = d3.select("#tooltip");
 
-    // Tooltip interactivity – only trigger if line is visible
+
+    // Tooltip interactivity
     paths.on("mouseover", function (event, d) {
         const currentPath = d3.select(this);
         if (parseFloat(currentPath.style("opacity")) > 0) {
             currentPath.attr("opacity", 1).attr("stroke-width", 3);
             tooltip.style("display", "block")
-                .html(`
+            .html(`
+                <div style="font-size: 14px;">
                     <strong>Sector:</strong> ${d[0]}<br>
-                    <strong>Year Range:</strong> ${d3.extent(d[1], e => e.Year).join(" - ")}
+                </div>
                 `);
         }
     }).on("mousemove", function (event) {
@@ -151,17 +146,17 @@ d3.json("../data/sector_yearly_data.json").then(data => {
             .text(d[0]);
     });
 
-    console.log("✅ Sector-level line chart rendered successfully with fixed hover logic.");
+    console.log("Sector-level line chart rendered successfully with fixed hover logic.");
 }).catch(error => {
-    console.error("❌ Error loading data:", error);
+    console.error("Error loading data:", error);
 });
 
 
 d3.json("../data/feature_importance_data_scaled.json").then(flatData => {
-    console.log("✅ Feature Importance Data Loaded:", flatData);
+    console.log("Feature Importance Data Loaded:", flatData);
     createRadarChartControls(flatData);
 }).catch(error => {
-    console.error("❌ Error loading feature importance data:", error);
+    console.error("Error loading feature importance data:", error);
 });
 
 function updateRadarChart(flatData, selectedSectors) {
@@ -190,7 +185,7 @@ function updateRadarChart(flatData, selectedSectors) {
         .range([-Math.PI / 2, Math.PI * 1.5]);
 
     const radialScale = d3.scaleLinear()
-        .domain([-2.5, 2.5]) // Adjust range if needed
+        .domain([-2.5, 2.5]) 
         .range([0, radius]);
 
     // Draw grid
@@ -228,7 +223,6 @@ function updateRadarChart(flatData, selectedSectors) {
             .text(feature);
     });
 
-    // Prepare line generator
     const radarLine = d3.lineRadial()
         .radius(d => radialScale(d))
         .angle((d, i) => angleScale(i) - Math.PI / 3.343);
@@ -240,7 +234,7 @@ function updateRadarChart(flatData, selectedSectors) {
             const match = flatData.find(d => d.Sector === sector && d.Feature === feature);
             return match ? match.Coefficient : 0;
         });
-        sectorValues.push(sectorValues[0]); // Close shape
+        sectorValues.push(sectorValues[0]); 
 
         radarSvg.append("path")
             .datum(sectorValues)
@@ -263,20 +257,22 @@ function createRadarChartControls(flatData) {
     const sectors = [...new Set(flatData.map(d => d.Sector))];
     const controlsDiv = d3.select("#radarChartControls").html("");
 
+    const selectedSectors = ["Business Equipment", "Chemicals", "Durable Goods"];
+
     sectors.forEach(sector => {
         const container = controlsDiv.append("div").style("margin-right", "10px");
 
-        container.append("input")
+        const checkbox = container.append("input")
             .attr("type", "checkbox")
             .attr("id", `radar-${sector}`)
             .attr("value", sector)
-            .property("checked", false)
+            .property("checked", selectedSectors.includes(sector))  
             .on("change", () => {
-                const selectedSectors = [];
+                const updatedSelection = [];
                 controlsDiv.selectAll("input:checked").each(function () {
-                    selectedSectors.push(this.value);
+                    updatedSelection.push(this.value);
                 });
-                updateRadarChart(flatData, selectedSectors);
+                updateRadarChart(flatData, updatedSelection);
             });
 
         container.append("label")
@@ -285,11 +281,5 @@ function createRadarChartControls(flatData) {
             .text(sector);
     });
 
-    // Preselect 3 sectors
-    const preselected = sectors.slice(0, 3);
-    preselected.forEach(sector => {
-        d3.select(`#radar-${sector}`).property("checked", true);
-    });
-
-    updateRadarChart(flatData, preselected);
+    updateRadarChart(flatData, selectedSectors);
 }

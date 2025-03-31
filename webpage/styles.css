@@ -115,6 +115,23 @@ li {
     padding-top: 150px;
 }
 
+.tooltip {
+    position: absolute;
+    z-index: 9999;
+    padding: 8px 12px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+.tooltip {
+    transition: opacity 0.2s ease;
+}
+
 .chart-container {
     max-width: 900px;
     margin: 0 auto 40px;
