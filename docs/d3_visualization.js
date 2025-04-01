@@ -25,7 +25,7 @@ const line = d3.line()
     .curve(d3.curveBasis);
 
 // Loading data and render the line chart
-d3.json("../data/sector_yearly_data.json").then(data => {
+d3.json("data/sector_yearly_data.json").then(data => {
     const nestedData = d3.groups(data, d => d.Sector);
 
     const margin = { top: 50, right: 150, bottom: 50, left: 60 };
@@ -152,7 +152,7 @@ d3.json("../data/sector_yearly_data.json").then(data => {
 });
 
 
-d3.json("../data/feature_importance_data_scaled.json").then(flatData => {
+d3.json("data/feature_importance_data_scaled.json").then(flatData => {
     console.log("Feature Importance Data Loaded:", flatData);
     createRadarChartControls(flatData);
 }).catch(error => {
