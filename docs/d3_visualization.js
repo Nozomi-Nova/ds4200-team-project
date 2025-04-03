@@ -28,6 +28,17 @@ const line = d3.line()
 d3.json("data/sector_yearly_data.json").then(data => {
     const nestedData = d3.groups(data, d => d.Sector);
 
+    let sectorNames = nestedData.map(d => d[0]);
+    sectorNames = sectorNames.filter(s => s !== "Other").sort();
+    sectorNames.push("Other");
+
+    const sortedNestedData = sectorNames.map(name => {
+        return nestedData.find(d => d[0] === name);
+    });
+
+    // Preselect sectors
+    const defaultSectors = ["Financials", "Energy", "Healthcare"];
+
     const margin = { top: 50, right: 150, bottom: 50, left: 60 };
     const width = 940 - margin.left - margin.right;
     const height = 580 - margin.top - margin.bottom;
@@ -50,18 +61,18 @@ d3.json("data/sector_yearly_data.json").then(data => {
 
     xScale.domain(d3.extent(data, d => new Date(d.Year, 0)));
     yScale.domain([0, 1]);
-    colorScale.domain(nestedData.map(d => d[0]));
+    colorScale.domain(sortedNestedData.map(d => d[0]));
 
     const paths = svg.selectAll(".line")
-        .data(nestedData)
+        .data(sortedNestedData)
         .enter()
         .append("path")
-        .attr("class", d => `line sector-${d[0].replace(/\s+/g, "-")}`)
+        .attr("class", "line")
         .attr("d", d => line(d[1]))
         .attr("fill", "none")
         .attr("stroke", d => colorScale(d[0]))
         .attr("stroke-width", 2)
-        .attr("opacity", 0.6);
+        .attr("opacity", d => defaultSectors.includes(d[0]) ? 0.6 : 0);
 
     const tooltip = d3.select("#tooltip");
 
@@ -90,32 +101,43 @@ d3.json("data/sector_yearly_data.json").then(data => {
     });
 
     // Axes
+    // X Axis (Bottom)
     svg.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")))
-        .append("text")
-        .attr("y", 40)
+        .selectAll("text")                         
+        .style("font-size", "14px");
+
+    svg.append("text")
+        .attr("y", height + 40)
         .attr("x", width / 2)
         .attr("text-anchor", "middle")
         .attr("fill", "black")
+        .style("font-size", "16px")
         .text("Year");
 
+    // Y Axis (Left)
     svg.append("g")
         .call(d3.axisLeft(yScale))
-        .append("text")
+        .selectAll("text")                           
+        .style("font-size", "14px");
+
+    svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", -50)
         .attr("x", -height / 2)
         .attr("dy", "1em")
         .attr("text-anchor", "middle")
         .attr("fill", "black")
+        .style("font-size", "16px")
         .text("Binary Rating");
 
+    // Chart Title
     svg.append("text")
         .attr("x", width / 2)
         .attr("y", -20)
         .attr("text-anchor", "middle")
-        .style("font-size", "16px")
+        .style("font-size", "19px")    
         .style("font-weight", "bold")
         .text("Sector-Based Trends in Binary Ratings");
 
@@ -125,25 +147,32 @@ d3.json("data/sector_yearly_data.json").then(data => {
         .style("flex-wrap", "wrap")
         .style("margin-top", "30px");
 
-    nestedData.forEach((d, i) => {
-        const container = legend.append("div").style("margin-right", "10px");
+    sortedNestedData.forEach((d, i) => {
+    const container = legend.append("div").style("margin-right", "10px");
 
-        container.append("input")
-            .attr("type", "checkbox")
-            .attr("id", `sector-${i}`)
-            .attr("checked", true)
-            .on("change", function () {
-                const isChecked = d3.select(this).property("checked");
-                svg.selectAll(`.sector-${d[0].replace(/\s+/g, "-")}`)
-                    .transition()
-                    .duration(500)
-                    .attr("opacity", isChecked ? 0.6 : 0);
+    container.append("input")
+        .attr("type", "checkbox")
+        .attr("id", `sector-${i}`)
+        .attr("value", d[0])
+        .property("checked", defaultSectors.includes(d[0]))
+        .on("change", function () {
+            const checkedSectors = [];
+
+            legend.selectAll("input:checked").each(function () {
+                checkedSectors.push(this.value);
             });
 
-        container.append("label")
-            .attr("for", `sector-${i}`)
-            .style("margin-left", "5px")
-            .text(d[0]);
+    svg.selectAll(".line")
+        .transition()
+        .duration(500)
+        .attr("opacity", d => checkedSectors.includes(d[0]) ? 0.6 : 0);
+});
+
+    container.append("label")
+        .attr("for", `sector-${i}`)
+        .style("margin-left", "5px")
+        .style("color", colorScale(d[0]))
+        .text(d[0]);
     });
 
     console.log("Sector-level line chart rendered successfully with fixed hover logic.");
@@ -216,10 +245,10 @@ function updateRadarChart(flatData, selectedSectors) {
             .attr("stroke", "#999");
 
         radarSvg.append("text")
-            .attr("x", x * 1.2)
+            .attr("x", x * 1.0)
             .attr("y", y * 1.2)
             .attr("text-anchor", x > 0 ? "start" : "end")
-            .attr("font-size", "12px")
+            .attr("font-size", "13px")
             .text(feature);
     });
 
@@ -254,7 +283,9 @@ function updateRadarChart(flatData, selectedSectors) {
 }
 
 function createRadarChartControls(flatData) {
-    const sectors = [...new Set(flatData.map(d => d.Sector))];
+    let sectors = [...new Set(flatData.map(d => d.Sector))];
+    sectors = sectors.filter(s => s !== "Other").sort();
+    sectors.push("Other");
     const controlsDiv = d3.select("#radarChartControls").html("");
 
     const selectedSectors = ["Business Equipment", "Chemicals", "Durable Goods"];

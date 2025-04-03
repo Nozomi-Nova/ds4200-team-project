@@ -1,7 +1,8 @@
 import pandas as pd
 import altair as alt
+import os
 
-df = pd.read_csv("/Users/nozomikaneda/Desktop/Northeastern University/Spring 2025 Semester/DS4200/DS4200_Credit_Ratings_Project/data/normalized_ratios.csv")
+df = pd.read_csv("/Users/nozomikaneda/Desktop/Northeastern University/Spring 2025 Semester/DS4200/DS4200_Credit_Ratings_Project/docs/data/normalized_ratios.csv")
 
 # Key features from feature importance analysis
 features = [
@@ -24,11 +25,9 @@ def clip_outliers(group):
     return group[(group["Value"] >= q_low) & (group["Value"] <= q_high)]
 
 # Apply clipping and preserve "Feature" as a column
-filtered_df = (
-    long_df
-    .groupby("Feature", group_keys=False)
-    .apply(lambda group: clip_outliers(group).assign(Feature=group.name))
-    .reset_index(drop=True)
+filtered_df = long_df.groupby("Feature", group_keys=False).apply(
+    lambda group: clip_outliers(group).assign(Feature=group.name),
+    include_groups=False
 )
 
 # Altair dropdown setup
@@ -38,13 +37,13 @@ selection = alt.selection_point(fields=["Feature"], bind=dropdown, value=feature
 # Scatterplot and trendline
 base = alt.Chart(filtered_df).add_params(selection).transform_filter(selection)
 
-scatter = base.mark_circle(opacity=0.3, size=60).encode(
+scatter = base.mark_circle(opacity=0.1, size=60).encode(
     x=alt.X("Value:Q", title="Financial Metric Value"),
     y=alt.Y("Rating Score:Q", title="Credit Rating Score (lower is better)", scale=alt.Scale(zero=False, domain=[22, 0])),
     tooltip=["Feature", "Value", "Rating Score"]
 )
 
-trend = base.transform_loess("Value", "Rating Score", groupby=["Feature"]).mark_line(color="red").encode(
+trend = base.transform_loess("Value", "Rating Score", groupby=["Feature"]).mark_line(color="red", strokeWidth=3).encode(
     x="Value:Q",
     y="Rating Score:Q"
 )
@@ -55,5 +54,15 @@ chart = (scatter + trend).properties(
     height=500
 )
 
-# Save to HTML file
-chart.save("visualizations/altair_financial_metric_vs_rating.html")
+chart = chart.configure_axis(
+    labelFontSize=14,
+    titleFontSize=16
+).configure_title(
+    fontSize=18
+).configure_legend(
+    labelFontSize=14,
+    titleFontSize=16
+)
+
+output_path = os.path.join(os.path.dirname(__file__), "altair_financial_metric_vs_rating.html")
+chart.save(output_path)
